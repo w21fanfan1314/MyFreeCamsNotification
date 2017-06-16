@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cocos.mfcn.views.MainViewController">
+   <center>
+      <VBox fx:id="infoPanel" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="grilImageView" fitHeight="331.0" fitWidth="309.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="grilNameView" prefHeight="18.0" prefWidth="280.0" text="名字">
+                     <HBox.margin>
+                        <Insets left="12.0" />
+                     </HBox.margin>
+                  </Label>
+                  <RadioButton fx:id="grilStateView" mnemonicParsing="false" prefHeight="18.0" prefWidth="159.0" text="状态" textFill="#cd100c">
+                     <HBox.margin>
+                        <Insets left="12.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <Button mnemonicParsing="false" onAction="#onEnterGrilPorfile" prefHeight="26.0" prefWidth="161.0" text="立即观看">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="12.0" right="12.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="12.0" top="12.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox prefHeight="400.0" prefWidth="230.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="49.0" prefWidth="195.0">
+               <children>
+                  <TextField fx:id="searchInputField" prefHeight="26.0" prefWidth="137.0" promptText="Saria_K">
+                     <HBox.margin>
+                        <Insets left="8.0" top="12.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#onSearch" prefHeight="26.0" prefWidth="79.0" text="搜索">
+                     <HBox.margin>
+                        <Insets left="8.0" right="8.0" top="12.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <ListView fx:id="allGrilsListView" prefHeight="351.0" prefWidth="186.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onRefresh" text="刷新" />
+                      <MenuItem mnemonicParsing="false" onAction="#onDeleteWatch" text="删除" />
+                        <MenuItem mnemonicParsing="false" onAction="#onDeleteAllWatch" text="全部删除" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
